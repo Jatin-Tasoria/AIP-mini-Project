@@ -16,7 +16,7 @@ mongoose.connect(process.env.MONGO_URI)
 
 /* ================== Models ================== */
 
-// 👤 User Schema
+//  User Schema
 const userSchema = new mongoose.Schema({
   email: { type: String, unique: true },
   password: String,
@@ -24,7 +24,7 @@ const userSchema = new mongoose.Schema({
 
 const User = mongoose.model("User", userSchema);
 
-// 📩 Contact Schema
+//  Contact Schema
 const contactSchema = new mongoose.Schema({
   name: String,
   email: String,
@@ -33,9 +33,9 @@ const contactSchema = new mongoose.Schema({
 
 const Contact = mongoose.model("Contact", contactSchema);
 
-// 🛒 Order Schema (UPDATED for your frontend)
+//  Order Schema
 const orderSchema = new mongoose.Schema({
-  userId: String, // 👈 IMPORTANT (since you're sending "guest")
+  userId: String,
 
   items: [
     {
@@ -56,7 +56,7 @@ const Order = mongoose.model("Order", orderSchema);
 
 // ================= AUTH =================
 
-// 🔐 Signup
+//  Signup
 app.post("/api/auth/signup", async (req, res) => {
   const { email, password } = req.body;
 
@@ -78,7 +78,7 @@ app.post("/api/auth/signup", async (req, res) => {
   }
 });
 
-// 🔐 Login
+//  Login
 app.post("/api/auth/login", async (req, res) => {
   const { email, password } = req.body;
 
@@ -102,7 +102,7 @@ app.post("/api/auth/login", async (req, res) => {
 
 // ================= CONTACT =================
 
-// 📩 Contact Form
+//  Contact Form
 app.post("/api/contact", async (req, res) => {
   const { name, email, message } = req.body;
 
@@ -132,7 +132,7 @@ app.post("/api/contact", async (req, res) => {
 
 // ================= ORDERS =================
 
-// 🛒 Buy Now (MAIN FIX FOR YOUR CHECKOUT)
+//  Buy Now
 app.post("/api/orders", async (req, res) => {
   console.log("🛒 Order request:", req.body);
 
@@ -160,7 +160,7 @@ app.post("/api/orders", async (req, res) => {
   }
 });
 
-// 📦 Get All Orders
+//  Get All Orders
 app.get("/api/orders", async (req, res) => {
   try {
     const orders = await Order.find().sort({ createdAt: -1 });
