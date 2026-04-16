@@ -6,13 +6,15 @@ const mongoose = require("mongoose");
 const bcrypt = require("bcryptjs");
 
 const app = express();
-app.use(cors());
+app.use(cors({
+  origin: "*"
+}));
 app.use(express.json());
 
 /* ================== MongoDB Connection ================== */
 mongoose.connect(process.env.MONGO_URI)
-  .then(() => console.log("✅ MongoDB connected"))
-  .catch((err) => console.error("❌ MongoDB error:", err));
+  .then(() => console.log(" MongoDB connected"))
+  .catch((err) => console.error(" MongoDB error:", err));
 
 /* ================== Models ================== */
 
@@ -106,7 +108,7 @@ app.post("/api/auth/login", async (req, res) => {
 app.post("/api/contact", async (req, res) => {
   const { name, email, message } = req.body;
 
-  console.log("📩 Incoming contact:", req.body);
+  console.log(" Incoming contact:", req.body);
 
   if (!name || !email || !message) {
     return res.status(400).json({ error: "All fields are required" });
@@ -125,7 +127,7 @@ app.post("/api/contact", async (req, res) => {
     });
 
   } catch (err) {
-    console.error("❌ Contact Error:", err);
+    console.error(" Contact Error:", err);
     res.status(500).json({ error: err.message });
   }
 });
@@ -134,7 +136,7 @@ app.post("/api/contact", async (req, res) => {
 
 //  Buy Now
 app.post("/api/orders", async (req, res) => {
-  console.log("🛒 Order request:", req.body);
+  console.log(" Order request:", req.body);
 
   const { userId, items, totalAmount } = req.body;
 
@@ -155,7 +157,7 @@ app.post("/api/orders", async (req, res) => {
     });
 
   } catch (err) {
-    console.error("❌ Order Error:", err);
+    console.error(" Order Error:", err);
     res.status(500).json({ message: err.message });
   }
 });
@@ -167,7 +169,7 @@ app.get("/api/orders", async (req, res) => {
     res.json(orders);
 
   } catch (err) {
-    console.error("❌ Fetch Orders Error:", err);
+    console.error(" Fetch Orders Error:", err);
     res.status(500).json({ message: "Server error" });
   }
 });
@@ -175,4 +177,13 @@ app.get("/api/orders", async (req, res) => {
 /* ================== Server ================== */
 
 const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
+
+const path = require("path");
+
+app.use(express.static(path.join(__dirname, "dist")));
+
+app.use((req, res) => {
+  res.sendFile(path.join(__dirname, "dist", "index.html"));
+});
+
+app.listen(PORT, () => console.log(` Server running on port ${PORT}`));
