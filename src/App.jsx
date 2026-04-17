@@ -1,13 +1,13 @@
 
 import Front from '../src/Pages/Front'
 import './App.css'
-import Navbar from './components/Navbar/Navbar'
-import Footer from './components/Footer/Footer'
-import MenuPage from './Pages/Menu'
-import AboutPage from './Pages/About'
-import AuthPage from './Pages/login'
-import Cart from './Pages/cart'
-import ReviewSection from './components/comments/comments'
+import Navbar from './components/Navbar/Navbar.jsx'
+import Footer from './components/Footer/Footer.jsx'
+import MenuPage from './Pages/Menu.jsx'
+import AboutPage from './Pages/About.jsx'
+import AuthPage from './Pages/Login.jsx'
+import Cart from './Pages/Cart.jsx'
+import ReviewSection from './components/comments/Comments.jsx'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import API from './api';
 
