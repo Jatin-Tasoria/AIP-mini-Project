@@ -5,6 +5,7 @@ import mocha from '/Img/mocha.jpeg';
 import capp from '/Img/capp.jpg';
 import chpa from '/Img/chpa.jpg';
 import cara from '/Img/cara.jpg';
+import API from '../api';
 import sand from '/Img/sand.jpg';
 
 const menuItems = [

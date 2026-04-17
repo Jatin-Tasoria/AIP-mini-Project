@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import API from '../api';
 
 const Cart = () => {
   const [cartItems, setCartItems] = useState([]);

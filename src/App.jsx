@@ -9,6 +9,7 @@ import AuthPage from './Pages/login'
 import Cart from './Pages/cart'
 import ReviewSection from './components/comments/comments'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import API from './api';
 
 
 function App() {

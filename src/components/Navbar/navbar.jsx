@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import API from '../../api';
 import { ShoppingCart, X, Menu as MenuIcon } from 'lucide-react';
 
 const Navbar = () => {

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Star, Pencil, Trash2, Check, X } from 'lucide-react';
+import API from '../../api';
 
 const ReviewSection = ({ user }) => {
   const [reviews, setReviews] = useState([]);

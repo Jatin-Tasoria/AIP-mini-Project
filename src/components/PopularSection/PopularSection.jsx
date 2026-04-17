@@ -4,6 +4,7 @@ import { div } from 'three/tsl';
 import download from '/Img/download.jpeg';
 import iced from '/Img/iced.jpeg';
 import mocha from '/Img/mocha.jpeg';
+import API from '../../api';
 
 const PopularSection = () => {
   const sliderRef = useRef(null);

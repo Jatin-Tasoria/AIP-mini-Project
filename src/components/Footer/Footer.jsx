@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Facebook, Instagram, Twitter, Mail, Phone } from 'lucide-react';
+import API from '../../api';
 
 const Footer = () => {
   // Form state
