@@ -21,6 +21,7 @@
     "crypto": "^1.0.1",
     "flowbite": "^3.1.2",
     "lucide-react": "^0.488.0",
+    "mongodb": "^7.1.1",
     "mongoose": "^9.4.1",
     "moongoose": "^0.0.5",
     "nodemon": "^3.1.14",
