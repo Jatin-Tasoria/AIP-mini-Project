@@ -11,6 +11,7 @@ const AboutPage = () => {
           Brewing joy since 2020. Discover our journey and passion behind every cup.
         </p>
       </div>
+      
 
       {/* About Content */}
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center">
