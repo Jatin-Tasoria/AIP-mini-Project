@@ -7,7 +7,7 @@ import MenuPage from './Pages/Menu.jsx'
 import AboutPage from './Pages/About.jsx'
 import AuthPage from './Pages/Login.jsx'
 import Cart from './Pages/Cart.jsx'
-import ReviewSection from './components/comments/Comments.jsx'
+import ReviewSection from './components/Comments/Comments.jsx'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import API from './api';
 
