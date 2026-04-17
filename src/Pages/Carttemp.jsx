@@ -51,13 +51,13 @@ const Cart = () => {
     }, 0);
 
     try {
-      const res = await fetch("http://localhost:5000/api/orders", {
+      const res = await fetch("https://cafe-backend-new-f6fqc5aub6cfgfhv.uaenorth-01.azurewebsites.net/api/orders", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          userId: "guest", // later replace with logged-in user
+          userId: "guest",
           items: cart.map((item) => ({
             name: item.title || item.name,
             price: parseFloat(item.price.replace("Rs.", "")),

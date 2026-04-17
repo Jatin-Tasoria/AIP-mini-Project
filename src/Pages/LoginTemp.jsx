@@ -38,7 +38,7 @@ const handleSubmit = async (e) => {
   if (errMsg) return setError(errMsg);
 
   try {
-    const res = await fetch(`http://localhost:5000/api/auth/${isLogin ? "login" : "signup"}`, {
+    const res = await fetch(`https://cafe-backend-new-f6fqc5aub6cfgfhv.uaenorth-01.azurewebsites.net/api/auth/${isLogin ? "login" : "signup"}`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(formData),
