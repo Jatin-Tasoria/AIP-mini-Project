@@ -19,28 +19,29 @@ const handleSubmit = async (e) => {
   setLoading(true);
 
   try {
-    const response = await fetch('http://localhost:5000/api/contact', {  
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ name, email, message }),
-    });
+    const response = await 
+    fetch("https://cafe-backend-new-f6fqc5aub6cfgfhv.uaenorth-01.azurewebsites.net/api/contact", {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({ name, email, message }),
+});
 
-    const result = await response.json();
+const result = await response.json();
 
-    if (response.ok) {
-      alert('Message sent successfully!');
-      setName('');
-      setEmail('');
-      setMessage('');
-    } else {
-      alert(result.error || 'Failed to send message');
-    }
-  } catch (error) {
-    alert('Error sending message');
-    console.error(error);
-  }
+if (response.ok) {
+  alert('Message sent successfully!');
+  setName('');
+  setEmail('');
+  setMessage('');
+} else {
+  alert(result.error || 'Failed to send message');
+}
+} catch (error) {
+  alert('Error sending message');
+  console.error(error);
+}
 
-  setLoading(false);
+setLoading(false);
 };
 
   return (
