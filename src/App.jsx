@@ -5,7 +5,7 @@ import Navbar from './components/Navbartemp/Navbar.jsx'
 import Footer from './components/Footertemp/Footer.jsx'
 import MenuPage from './Pages/Menu.jsx'
 import AboutPage from './Pages/About.jsx'
-import AuthPage from './Pages/Login.jsx'
+import AuthPage from './Pages/LoginTemp.jsx'
 import Cart from './Pages/Cart.jsx'
 import ReviewSection from './components/Commentstemp/Comments.jsx'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
