@@ -1,7 +1,7 @@
 import React from 'react'
-import Banner from '../components/Banner/Banner.jsx'
-import PopularSection from '../components/PopularSection/PopularSection'
-import MenuButton from '../components/Button/Button.jsx'
+import Banner from '../components/Bannertemp/Banner.jsx'
+import PopularSection from '../components/PopularSectiontemp/PopularSection.jsx'
+import MenuButton from '../components/Buttontemp/Button.jsx'
 import API from '../api';
 
 const Front = () => {
